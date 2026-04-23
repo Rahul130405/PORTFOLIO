@@ -76,6 +76,35 @@ It combines **performance, design, and interactivity** to deliver a premium user
 
 ---
 
+## 📸 Gallery
+
+<div align="center">
+  <table style="width:100%; text-align:center;">
+    <tr>
+      <td width="50%">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" width="100%" alt="Coding Session"/><br/>
+        <b>Late Night Coding</b>
+      </td>
+      <td width="50%">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop" width="100%" alt="Cybersecurity"/><br/>
+        <b>Tech Exploration</b>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <img src="https://images.unsplash.com/photo-1525333328112-c2405cb3334d?q=80&w=1000&auto=format&fit=crop" width="100%" alt="AI Research"/><br/>
+        <b>AI & ML Research</b>
+      </td>
+      <td width="50%">
+        <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop" width="100%" alt="Workspace"/><br/>
+        <b>Productive Setup</b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
 ## 🛠 Tech Stack
 
 | Layer      | Technologies            |
