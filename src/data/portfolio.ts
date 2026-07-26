@@ -30,6 +30,39 @@ export const STATS = [
   { num: '∞', label: 'Curiosity' },
 ]
 
+export const PHOTOS = [
+  {
+    url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop',
+    caption: 'Late night coding sessions.',
+    category: 'Life',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+    caption: 'Exploring Cybersecurity.',
+    category: 'Tech',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1525333328112-c2405cb3334d?q=80&w=2070&auto=format&fit=crop',
+    caption: 'AI Research & Development.',
+    category: 'Work',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2070&auto=format&fit=crop',
+    caption: 'Learning through experiments.',
+    category: 'Work',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop',
+    caption: 'The setup where ideas turn into code.',
+    category: 'Tech',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
+    caption: 'Clean code is the priority.',
+    category: 'Life',
+  },
+]
+
 export const SKILLS = [
   {
     title: 'Languages',
@@ -84,6 +117,17 @@ export type Project = {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    id: 10,
+    category: 'AI / Security',
+    title: 'Secret-Message-Encryptor',
+    desc: 'AI-powered encryption tool featuring custom ciphers and intelligent cryptanalysis using LLMs for secure communication.',
+    tech: ['Python', 'LLM', 'Cryptography'],
+    gradient: 'linear-gradient(135deg, #1e3a8a, #4338ca, #6366f1)',
+    emoji: '🔐',
+    github: 'https://github.com/Rahul130405/Secret-Message-Encryptor',
+    highlight: 'AI Cryptanalysis',
+  },
   {
     id: 7,
     category: 'AI / Agriculture',
@@ -166,25 +210,45 @@ export const PROJECTS: Project[] = [
 export const ACHIEVEMENTS = [
   {
     year: '2025',
-    title: 'Tekathon Winner 🏆',
-    desc: 'Won the prestigious Tekathon hackathon competition, delivering an innovative AI solution under intense time pressure that impressed a panel of industry judges.',
-    badge: '🥇 Winner',
+    title: 'LeetCode Proficiency',
+    desc: 'Solved 200+ DSA problems covering graphs, dynamic programming, and advanced concepts.',
+    badge: '🧠 200+ Solved',
   },
   {
     year: '2025',
-    title: 'IIT Roorkee NSS — 6th Position',
-    desc: "Achieved 6th place nationally at IIT Roorkee's National Social Summit — competing against top engineering students from premier institutions across India.",
+    title: 'Consistent Coding Streak',
+    desc: 'Maintained a 100+ days coding streak, demonstrating strong consistency and discipline.',
+    badge: '🔥 100+ Streak',
+  },
+  {
+    year: '2025',
+    title: 'IIT Roorkee NSS — Rank 6',
+    desc: 'Secured Rank 6 at IIT Roorkee National Social Summit among national-level participants.',
     badge: '🏅 6th National',
+  },
+  {
+    year: '2025',
+    title: 'Tekathon 4.0 Winner',
+    desc: 'Winner of Tekathon 4.0, building a real-world solution under strict time constraints.',
+    badge: '🥇 Winner',
   },
 ]
 
 export const EXPERIENCE = [
   {
     icon: '⛓',
-    title: 'Blockchain Club Manager',
-    org: 'College Blockchain Society',
-    period: '2023 – Present',
-    desc: 'Driving the adoption of Web3 technologies across the campus by leading a community of 200+ blockchain enthusiasts. Architected the club&apos;s educational roadmap, covering everything from cryptographic fundamentals to advanced smart contract development in Solidity. Mentored multiple student teams for national-level Web3 hackathons and spearheaded the development of an internal decentralized voting system for college club elections.',
-    tags: ['Leadership', 'Solidity', 'Smart Contracts', 'Web3', 'Architecture'],
+    title: 'Joint Secretary',
+    org: 'TokenTitan Club, Chandigarh University',
+    period: '2026 – Present',
+    desc: 'Promoted from Club Manager in recognition of leadership, event management, and contributions to club growth. Lead strategic initiatives and coordinate club operations.',
+    tags: ['Leadership', 'Management', 'Strategy', 'Event Planning'],
+  },
+  {
+    icon: '⛓',
+    title: 'Club Manager',
+    org: 'TokenTitan Club, Chandigarh University',
+    period: '2025 – 2026',
+    desc: 'Organized and led 10+ technical workshops, hackathons, and community events. Managed a cross-functional team and coordinated event planning, marketing, and execution.',
+    tags: ['Leadership', 'Event Management', 'Marketing', 'Community'],
   },
 ]
