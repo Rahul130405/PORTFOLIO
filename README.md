@@ -7,6 +7,7 @@
 ![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38BDF8)
 ![Framer Motion](https://img.shields.io/badge/Framer-Motion-purple)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+[![Live Portfolio](https://img.shields.io/badge/🚀-Live%20Portfolio-success?style=for-the-badge)](https://rrj-portfolio.vercel.app/)
 
 ---
 
