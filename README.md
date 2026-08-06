@@ -27,6 +27,14 @@ It combines **performance, design, and interactivity** to deliver a premium user
 
 ---
 
+## 🌐 Live Demo
+
+Explore the portfolio online:
+
+**🚀 Live Portfolio:** [https://your-portfolio-url.vercel.app](https://rrj-portfolio.vercel.app/)
+
+---
+
 ## ✨ Key Features
 
 ### 🎨 Dynamic Theme System
