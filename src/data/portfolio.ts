@@ -53,39 +53,6 @@ export const STATS = [
   { num: '∞', label: 'Curiosity' },
 ]
 
-export const PHOTOS = [
-  {
-    url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop',
-    caption: 'Late night coding sessions.',
-    category: 'Life',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
-    caption: 'Exploring Cybersecurity.',
-    category: 'Tech',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1525333328112-c2405cb3334d?q=80&w=2070&auto=format&fit=crop',
-    caption: 'AI Research & Development.',
-    category: 'Work',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2070&auto=format&fit=crop',
-    caption: 'Learning through experiments.',
-    category: 'Work',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop',
-    caption: 'The setup where ideas turn into code.',
-    category: 'Tech',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
-    caption: 'Clean code is the priority.',
-    category: 'Life',
-  },
-]
-
 export const SKILLS = [
   {
     title: 'Languages',
