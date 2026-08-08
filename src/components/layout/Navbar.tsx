@@ -1,6 +1,6 @@
 'use client'
 
-import { useScrollProgress, useTheme } from '@/hooks/usePortfolio'
+import { useScrollProgress } from '@/hooks/usePortfolio'
 import { PERSONAL } from '@/data/portfolio'
 import Link from 'next/link'
 
@@ -14,7 +14,6 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const progress = useScrollProgress()
-  const { isDark, toggle } = useTheme()
 
   return (
     <>
@@ -29,19 +28,18 @@ export default function Navbar() {
       <nav
         style={{
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-          padding: '1rem 2rem', display: 'flex', alignItems: 'center',
-          justifyContent: 'space-between',
+          padding: '1rem 2rem', display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center',
           backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)',
-          background: isDark ? 'rgba(5,5,10,0.75)' : 'rgba(248,248,255,0.85)',
+          background: 'rgba(5,5,10,0.75)',
           borderBottom: '1px solid var(--border)',
           transition: 'all 0.3s',
         }}
       >
-        <span style={{ fontFamily: 'var(--font-syne)', fontWeight: 800, fontSize: '1.2rem', background: 'linear-gradient(135deg,var(--accent),var(--accent2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+        <span style={{ fontFamily: 'var(--font-syne)', fontWeight: 800, fontSize: '1.2rem', background: 'linear-gradient(135deg,var(--accent),var(--accent2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', justifySelf: 'start' }}>
           {PERSONAL.shortName}
         </span>
 
-        <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none' }} className="nav-links-desktop">
+        <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }} className="nav-links-desktop">
           {NAV_LINKS.map(link => (
             <li key={link.href}>
               <a
@@ -55,20 +53,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        <button
-          onClick={toggle}
-          style={{
-            background: 'var(--surface)', border: '1px solid var(--border2)',
-            color: 'var(--text2)', padding: '0.4rem 0.8rem', borderRadius: 8,
-            cursor: 'pointer', fontSize: '0.8rem', fontFamily: 'var(--font-dm-sans)',
-            transition: 'all 0.2s',
-          }}
-          onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
-          onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text2)' }}
-        >
-          {isDark ? '☀ Light' : '🌙 Dark'}
-        </button>
+        <div /> {/* Spacer for symmetry */}
       </nav>
     </>
   )

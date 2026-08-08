@@ -4,10 +4,11 @@
 export const PERSONAL = {
   name: 'Rahul Raj Jaiswal',
   shortName: 'RRJ',
-  tagline: 'CSE Student | AI Enthusiast | Problem Solver',
-  email: 'rahul130405@gmail.com',
+  tagline: 'Machine Learning Developer | Full Stack Developer',
+  email: 'yashckp@gmail.com',
   github: 'https://github.com/Rahul130405',
   linkedin: 'https://www.linkedin.com/in/rahulrajjaiswal/',
+  leetcode: 'https://leetcode.com/u/SShItZbD7e/',
   location: 'India 🇮🇳',
   available: true,
   bio: [
@@ -15,6 +16,28 @@ export const PERSONAL = {
     "Whether it's building an AI-powered PDF explainer or competing in hackathons, I consistently push the limits of what's possible with code. I believe great software is invisible — it just works.",
   ],
 }
+
+export const EDUCATION = [
+  {
+    institution: 'Chandigarh University',
+    degree: 'B.E. Computer Science Engineering',
+    period: '2024 – 2028',
+    desc: 'Focus on AI, DSA, and Full Stack development.',
+  },
+  {
+    institution: 'Senior Secondary Schooling',
+    degree: 'Class XII (CBSE)',
+    period: '2021 – 2023',
+    desc: 'Mainstream Sciences (Physics, Chemistry, Mathematics).',
+  },
+]
+
+export const CERTIFICATIONS = [
+  { name: 'IBM AI Engineering', issuer: 'IBM' },
+  { name: 'Meta Backend Developer', issuer: 'Meta' },
+  { name: 'Forage Cybersecurity Virtual Experience', issuer: 'Forage' },
+  { name: 'Chandigarh University AI Workshop', issuer: 'CU' },
+]
 
 export const TYPING_PHRASES = [
   'Building AI Systems',
@@ -84,6 +107,12 @@ export const SKILLS = [
     ],
   },
   {
+    title: 'Cybersecurity',
+    color: 'red',
+    icon: '🛡️',
+    badges: ['Ethical Hacking', 'Network Security', 'Penetration Testing', 'Kali Linux'],
+  },
+  {
     title: 'Backend & DB',
     color: 'teal',
     icon: '⚙️',
@@ -111,12 +140,35 @@ export type Project = {
   tech: string[]
   gradient: string
   emoji: string
-  github: string
+  github?: string
   demo?: string
   highlight?: string
 }
 
 export const PROJECTS: Project[] = [
+  {
+    id: 11,
+    category: 'AI / EdTech',
+    title: 'EduBits',
+    desc: 'Intelligent platform for concise educational content generation and learning paths.',
+    tech: ['Next.js', 'LLM', 'AI'],
+    gradient: 'linear-gradient(135deg, #1e3a8a, #4338ca, #6366f1)',
+    emoji: '🎓',
+    demo: 'https://edubits0.vercel.app/',
+    highlight: 'Learning Paths',
+  },
+  {
+    id: 6,
+    category: 'Blockchain',
+    title: 'ChainVote',
+    desc: 'A decentralized voting protocol leveraging SHA-256 blockchain chaining and AES-256 encryption to ensure secure, anonymous, and tamper-proof digital elections.',
+    tech: ['Django', 'Python', 'Blockchain', 'Cryptography'],
+    gradient: 'linear-gradient(135deg, #1e1b4b, #312e81, #4338ca)',
+    emoji: '🗳️',
+    github: 'https://github.com/Rahul130405/ChainVote',
+    demo: 'https://chainvote-rrj.vercel.app/',
+    highlight: 'Tamper-Proof Ledger',
+  },
   {
     id: 10,
     category: 'AI / Security',
@@ -160,17 +212,6 @@ export const PROJECTS: Project[] = [
     emoji: '📄',
     github: 'https://github.com/Rahul130405/GUI-PDF-WEB',
     highlight: 'Context-Aware AI',
-  },
-  {
-    id: 6,
-    category: 'Blockchain',
-    title: 'ChainVote',
-    desc: 'A decentralized voting protocol leveraging SHA-256 blockchain chaining and AES-256 encryption to ensure secure, anonymous, and tamper-proof digital elections.',
-    tech: ['Django', 'Python', 'Blockchain', 'Cryptography'],
-    gradient: 'linear-gradient(135deg, #1e1b4b, #312e81, #4338ca)',
-    emoji: '🗳️',
-    github: 'https://github.com/Rahul130405/ChainVote',
-    highlight: 'Tamper-Proof Ledger',
   },
   {
     id: 9,
@@ -235,6 +276,22 @@ export const ACHIEVEMENTS = [
 ]
 
 export const EXPERIENCE = [
+  {
+    icon: '🧠',
+    title: 'Full Stack Development Intern',
+    org: 'StartIQOS AI',
+    period: 'Jun 2026 – Aug 2026',
+    desc: 'Developed full-stack features for an AI-powered Startup Operating System, contributing to scalable frontend and backend modules, authentication, REST APIs, and production-ready workflows.',
+    tags: ['Full Stack', 'React', 'Node.js', 'TypeScript'],
+  },
+  {
+    icon: '🧠',
+    title: 'Software Engineer — Core Team',
+    org: 'StartIQOS AI',
+    period: 'Aug 2026 – Present',
+    desc: 'Continuing as part of the Core Team, building and maintaining production-ready AI-powered product features while collaborating with founders on scalable software solutions.',
+    tags: ['Software Engineering', 'AI', 'Product Development'],
+  },
   {
     icon: '⛓',
     title: 'Joint Secretary',

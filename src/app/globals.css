@@ -3,50 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --bg: #050505;
-  --bg2: #0a0f1f;
-  --bg3: #0d0d16;
-  --surface: rgba(19, 19, 31, 0.6);
-  --surface2: rgba(26, 26, 46, 0.8);
-  --border: rgba(255,255,255,0.05);
-  --border2: rgba(255,255,255,0.1);
-  --text: #f0f0ff;
-  --text2: #a0a0c0;
-  --text3: #606080;
-  --accent: #7000ff;
-  --accent2: #00f2ff;
-  --accent3: #ff6b6b;
-  --glow: rgba(112,0,255,0.2);
-  --glow2: rgba(0,242,255,0.2);
-}
-
-.light {
-  --bg: #fcfcfd;
-  --bg2: #f8fafc;
-  --bg3: #f1f5f9;
-  --surface: rgba(255, 255, 255, 0.7);
-  --surface2: rgba(255, 255, 255, 0.9);
-  --border: rgba(0, 0, 0, 0.05);
-  --border2: rgba(0, 0, 0, 0.08);
-  --text: #1e293b;
-  --text2: #475569;
-  --text3: #64748b;
-  --accent: #6c63ff;
-  --accent2: #00d4aa;
-  --accent3: #ff6b6b;
-  --glow: rgba(199, 210, 254, 0.4);
-  --glow2: rgba(167, 243, 208, 0.4);
-  background-attachment: fixed;
-}
-
-.light body {
-  background-color: #fcfcfd;
-  background-image: 
-    fixed radial-gradient(at 0% 0%, #e0f2fe 0%, transparent 50%),
-    fixed radial-gradient(at 100% 0%, #f0fdf4 0%, transparent 50%),
-    fixed radial-gradient(at 100% 100%, #f5f3ff 0%, transparent 50%),
-    fixed radial-gradient(at 0% 100%, #eff6ff 0%, transparent 50%),
-    fixed radial-gradient(at 50% 50%, #fdf2f8 0%, transparent 50%);
+  --bg: #0B0F14;
+  --bg2: #10161D;
+  --bg3: #131A21;
+  --surface: rgba(16, 22, 29, 0.6);
+  --surface2: rgba(16, 22, 29, 0.85);
+  --border: rgba(241, 237, 228, 0.06);
+  --border2: rgba(241, 237, 228, 0.12);
+  --text: #F1EDE4;
+  --text2: #838B98;
+  --text3: #5B6270;
+  --accent: #C9A227;
+  --accent2: #4FB3AC;
+  --accent3: #C9A227;
+  --glow: rgba(201,162,39,0.15);
+  --glow2: rgba(79,179,172,0.15);
 }
 
 * {
@@ -93,15 +64,6 @@ body {
   -webkit-backdrop-filter: blur(20px);
   background: rgba(19, 19, 31, 0.7);
   border: 1px solid var(--border);
-}
-
-.light .glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.05);
-  border-radius: 24px;
 }
 
 /* Gradient text utility */
@@ -161,19 +123,6 @@ body {
 .tilt-card {
   transform-style: preserve-3d;
   transition: transform 0.3s ease;
-}
-
-/* Cursor glow */
-#cursor-glow {
-  position: fixed;
-  pointer-events: none;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  transition: opacity 0.3s;
 }
 
 /* Progress bar */

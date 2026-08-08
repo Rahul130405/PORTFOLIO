@@ -1,6 +1,6 @@
 'use client'
 
-import { PERSONAL, SKILLS, STATS, ACHIEVEMENTS, EXPERIENCE } from '@/data/portfolio'
+import { PERSONAL, SKILLS, STATS, ACHIEVEMENTS, EXPERIENCE, EDUCATION, CERTIFICATIONS } from '@/data/portfolio'
 import { useState } from 'react'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { sendEmail } from '@/app/actions'
@@ -25,7 +25,7 @@ export function AboutSection() {
   return (
     <section id="about" style={{ padding: '8rem 0' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem' }}>
-        <SectionHeader tag="// ABOUT ME" title={<>Building the <span className="gradient-text-2">Future</span></>} sub="Passionate developer blending AI, algorithms, and elegant code." />
+        <SectionHeader tag="ABOUT ME" title={<>Building the <span className="gradient-text-2">Future</span></>} sub="Passionate developer blending AI, algorithms, and elegant code." />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
           <div className="reveal">
             <h2 style={{ fontFamily: 'var(--font-syne)', fontSize: '2.2rem', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
@@ -60,7 +60,7 @@ export function AboutSection() {
               <div style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '0.85rem', lineHeight: 2 }}>
                 <span style={{ color: '#6c63ff' }}>const</span> <span style={{ color: '#00d4aa' }}>developer</span> <span style={{ color: 'var(--text2)' }}>= {'{'}</span><br />
                 &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>name</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;Rahul Raj Jaiswal&apos;</span><span style={{ color: 'var(--text2)' }}>,</span><br />
-                &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>role</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;CSE Student&apos;</span><span style={{ color: 'var(--text2)' }}>,</span><br />
+                &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>role</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;ML Developer&apos;</span><span style={{ color: 'var(--text2)' }}>,</span><br />
                 &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>passion</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;AI + DSA&apos;</span><span style={{ color: 'var(--text2)' }}>,</span><br />
                 &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>available</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#00d4aa' }}>true</span><span style={{ color: 'var(--text2)' }}>,</span><br />
                 &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>location</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;India 🇮🇳&apos;</span><br />
@@ -94,7 +94,7 @@ export function SkillsSection() {
   return (
     <section id="skills" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, transparent, var(--bg2), transparent)' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem' }}>
-        <SectionHeader tag="// TECH STACK" title={<>Skills & <span className="gradient-text-2">Expertise</span></>} sub="Technologies I use to bring ideas to life." />
+        <SectionHeader tag="TECH STACK" title={<>Skills & <span className="gradient-text-2">Expertise</span></>} sub="Technologies I use to bring ideas to life." />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
           {SKILLS.map(cat => {
             const colors = BADGE_COLORS[cat.color] || BADGE_COLORS.purple
@@ -125,12 +125,52 @@ export function SkillsSection() {
   )
 }
 
+// ─── Education ──────────────────────────────────────────────────────────────
+export function EducationSection() {
+  return (
+    <section id="education" style={{ padding: '8rem 0' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem' }}>
+        <SectionHeader tag="EDUCATION" title={<>Academic <span className="gradient-text-2">Background</span></>} />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+          {EDUCATION.map((edu, i) => (
+            <div key={i} className="reveal glass" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '1.5rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-syne)', fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.25rem' }}>{edu.institution}</h3>
+              <div style={{ fontSize: '0.9rem', color: 'var(--accent)', marginBottom: '0.5rem', fontFamily: 'var(--font-jetbrains-mono)' }}>{edu.degree}</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text3)', marginBottom: '1rem' }}>{edu.period}</div>
+              <p style={{ fontSize: '0.875rem', color: 'var(--text2)', lineHeight: 1.7 }}>{edu.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ─── Certifications ─────────────────────────────────────────────────────────
+export function CertificationsSection() {
+  return (
+    <section id="certifications" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, transparent, var(--bg2), transparent)' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem' }}>
+        <SectionHeader tag="CERTIFICATIONS" title={<>Professional <span className="gradient-text-2">Certifications</span></>} />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+          {CERTIFICATIONS.map((cert, i) => (
+            <div key={i} className="reveal glass" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '1.5rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-syne)', fontWeight: 700, fontSize: '1rem', marginBottom: '0.25rem' }}>{cert.name}</h3>
+              <div style={{ fontSize: '0.85rem', color: 'var(--text3)' }}>{cert.issuer}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─── Achievements ────────────────────────────────────────────────────────────
 export function AchievementsSection() {
   return (
-    <section id="achievements" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, transparent, var(--bg2), transparent)' }}>
+    <section id="achievements" style={{ padding: '8rem 0' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem' }}>
-        <SectionHeader tag="// MILESTONES" title={<>Achievements & <span className="gradient-text-2">Awards</span></>} />
+        <SectionHeader tag="MILESTONES" title={<>Achievements & <span className="gradient-text-2">Awards</span></>} />
         <div style={{ position: 'relative', maxWidth: 700, margin: '0 auto' }}>
           <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 1, background: 'linear-gradient(to bottom, var(--accent), var(--accent2), transparent)' }} />
           {ACHIEVEMENTS.map((a, i) => (
@@ -158,9 +198,9 @@ export function AchievementsSection() {
 // ─── Experience ──────────────────────────────────────────────────────────────
 export function ExperienceSection() {
   return (
-    <section id="experience" style={{ padding: '8rem 0' }}>
+    <section id="experience" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, transparent, var(--bg2), transparent)' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem' }}>
-        <SectionHeader tag="// EXPERIENCE" title={<>Leadership & <span className="gradient-text-2">Responsibility</span></>} />
+        <SectionHeader tag="EXPERIENCE" title={<>Leadership & <span className="gradient-text-2">Responsibility</span></>} />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
           {EXPERIENCE.map((exp, i) => (
             <div key={i} className="reveal"
@@ -208,7 +248,7 @@ export function ContactSection() {
       <div style={{ maxWidth: 700, margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
         <div className="reveal">
           <span style={{ display: 'inline-block', fontFamily: 'var(--font-jetbrains-mono)', fontSize: '0.75rem', color: 'var(--accent)', background: 'rgba(108,99,255,0.1)', border: '1px solid rgba(108,99,255,0.2)', borderRadius: 100, padding: '0.25rem 1rem', marginBottom: '1rem', letterSpacing: '0.1em' }}>
-            {'// GET IN TOUCH'}
+            GET IN TOUCH
           </span>
           <h2 style={{ fontFamily: 'var(--font-syne)', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             Let&apos;s build something <span className="gradient-text-2">together.</span>

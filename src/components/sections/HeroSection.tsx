@@ -1,81 +1,135 @@
 'use client'
 
-import { useTyping, useTheme } from '@/hooks/usePortfolio'
-import { PERSONAL, TYPING_PHRASES } from '@/data/portfolio'
-import { Github, Linkedin } from 'lucide-react'
+import { PERSONAL } from '@/data/portfolio'
+import { Github, Linkedin, Mail, Code } from 'lucide-react'
 
 export default function HeroSection() {
-  const typed = useTyping(TYPING_PHRASES)
-  const { isDark } = useTheme()
-
   return (
     <section
       id="hero"
-      style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '5rem', overflow: 'hidden', position: 'relative' }}
+      style={{
+        minHeight: '100vh',
+        display: 'grid',
+        gridTemplateColumns: '1.15fr 0.85fr',
+        alignItems: 'center',
+        gap: '4vw',
+        padding: '5rem 6vw 0',
+        position: 'relative',
+      }}
+      className="hero-grid"
     >
-      {/* Light Mode Only Background - Ultra Clean SaaS Style */}
-      {!isDark && (
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <div style={{ position: 'absolute', width: '70%', height: '70%', borderRadius: '50%', background: 'rgba(224, 242, 254, 0.25)', top: '-20%', right: '-10%', filter: 'blur(120px)', animation: 'float 20s ease-in-out infinite' }} />
-          <div style={{ position: 'absolute', width: '60%', height: '60%', borderRadius: '50%', background: 'rgba(245, 243, 255, 0.25)', bottom: '-10%', left: '-5%', filter: 'blur(120px)', animation: 'float 25s ease-in-out infinite reverse' }} />
-        </div>
-      )}
-
-      <div className="container" style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
-        {/* Name */}
-        <h1 style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 'clamp(2.8rem, 7vw, 5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '0.04em', marginBottom: '1rem', animation: 'fadeUp 0.6s 0.1s ease both', opacity: 0, animationFillMode: 'forwards' }}>
-          <span style={{ display: 'block', color: 'var(--text)' }}>Rahul Raj</span>
-          <span className="gradient-text" style={{ display: 'block' }}>Jaiswal</span>
+      {/* Left column */}
+      <div style={{ padding: '8vh 0' }}>
+        <h1 style={{
+          fontFamily: 'var(--font-syne)', fontWeight: 500, fontSize: 'clamp(2rem, 4vw, 3.4rem)',
+          lineHeight: 1.1, letterSpacing: '-0.01em', color: 'var(--text)', marginBottom: 20,
+          animation: 'fadeUp 0.6s 0.2s ease both', opacity: 0, whiteSpace: 'nowrap',
+        }}>
+          Rahul Raj <em style={{ fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Jaiswal</em>
         </h1>
 
-        {/* Tagline */}
-        <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--text2)', marginBottom: '0.5rem', fontWeight: 300, animation: 'fadeUp 0.6s 0.2s ease both', opacity: 0, animationFillMode: 'forwards' }}>
-          {PERSONAL.tagline}
+        <div style={{
+          fontFamily: 'var(--font-jetbrains-mono)', fontSize: 14, color: 'var(--text2)',
+          marginBottom: 28, animation: 'fadeUp 0.6s 0.3s ease both', opacity: 0,
+        }}>
+          Machine Learning Developer <span style={{ color: 'var(--text3)' }}>·</span> Full Stack Developer <span style={{ color: 'var(--text3)' }}>·</span> StartIQOS AI
+        </div>
+
+        <p style={{
+          fontSize: 16.5, lineHeight: 1.7, color: 'var(--text2)', maxWidth: '34ch', marginBottom: 44,
+          animation: 'fadeUp 0.6s 0.35s ease both', opacity: 0,
+        }}>
+          I build AI systems and full-stack products end to end — from Swin Transformer
+          diagnostics at 95.8% accuracy to production-grade backends. First-principles,
+          not frameworks-first.
         </p>
 
-        {/* Typing */}
-        <div style={{ height: '2.5rem', marginBottom: '2.5rem', animation: 'fadeUp 0.6s 0.3s ease both', opacity: 0, animationFillMode: 'forwards' }}>
-          <span style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '0.95rem', color: 'var(--accent2)', background: 'rgba(0,212,170,0.08)', padding: '0.25rem 0.75rem', borderRadius: 6, border: '1px solid rgba(0,212,170,0.2)' }}>
-            {typed}
-            <span style={{ animation: 'blink 1s step-end infinite', color: 'var(--accent2)' }}>|</span>
-          </span>
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 32, marginBottom: 64,
+          animation: 'fadeUp 0.6s 0.4s ease both', opacity: 0,
+        }}>
+          <a href="#projects" style={{
+            fontFamily: 'var(--font-dm-sans)', fontWeight: 500, fontSize: 14.5, color: 'var(--bg)',
+            background: 'var(--text)', padding: '13px 26px', borderRadius: 2, textDecoration: 'none',
+            transition: 'background .2s ease, transform .2s ease', display: 'inline-block',
+          }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-1px)' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'var(--text)'; e.currentTarget.style.transform = 'translateY(0)' }}>
+            View projects
+          </a>
+          <a href="#contact" style={{
+            fontFamily: 'var(--font-dm-sans)', fontSize: 14.5, color: 'var(--text2)', textDecoration: 'none',
+            borderBottom: '1px solid var(--border2)', paddingBottom: 2, transition: 'color .2s ease, border-color .2s ease',
+          }}
+            onMouseEnter={e => { e.currentTarget.style.color = 'var(--text)'; e.currentTarget.style.borderColor = 'var(--text2)' }}
+            onMouseLeave={e => { e.currentTarget.style.color = 'var(--text2)'; e.currentTarget.style.borderColor = 'var(--border2)' }}>
+            Get in touch
+          </a>
         </div>
 
-        {/* CTAs */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem', animation: 'fadeUp 0.6s 0.4s ease both', opacity: 0, animationFillMode: 'forwards' }}>
-          <a href="#projects" style={{ background: 'linear-gradient(135deg,var(--accent),#8b84ff)', color: '#fff', padding: '0.75rem 2rem', borderRadius: 10, textDecoration: 'none', fontWeight: 500, fontSize: '0.9rem', letterSpacing: '0.02em', boxShadow: '0 0 30px var(--glow)', transition: 'all 0.3s' }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 40px var(--glow)' }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 30px var(--glow)' }}>
-            View Projects →
-          </a>
-          <a href="#contact" style={{ background: 'transparent', color: 'var(--text)', padding: '0.75rem 2rem', borderRadius: 10, textDecoration: 'none', fontWeight: 500, fontSize: '0.9rem', border: '1px solid var(--border2)', transition: 'all 0.3s' }}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.background = 'rgba(108,99,255,0.05)' }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--text)'; e.currentTarget.style.background = 'transparent' }}>
-            Contact Me
-          </a>
-        </div>
-
-        {/* Socials */}
-        <div style={{ display: 'flex', gap: '1rem', animation: 'fadeUp 0.6s 0.5s ease both', opacity: 0, animationFillMode: 'forwards' }}>
+        <div style={{
+          display: 'flex', gap: 24, fontFamily: 'var(--font-jetbrains-mono)', fontSize: 12,
+          letterSpacing: '0.06em', textTransform: 'uppercase', animation: 'fadeUp 0.6s 0.5s ease both', opacity: 0,
+        }}>
           {[
-            { href: PERSONAL.github, icon: <Github size={18} />, label: 'GitHub' },
-            { href: PERSONAL.linkedin, icon: <Linkedin size={18} />, label: 'LinkedIn' },
+            { href: PERSONAL.github, icon: <Github size={13} />, label: 'GitHub' },
+            { href: PERSONAL.linkedin, icon: <Linkedin size={13} />, label: 'LinkedIn' },
+            { href: PERSONAL.leetcode, icon: <Code size={13} />, label: 'LeetCode' },
+            { href: `mailto:${PERSONAL.email}`, icon: <Mail size={13} />, label: 'Email' },
           ].map(s => (
-            <a key={s.label} href={s.href} target="_blank" rel="noreferrer"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text3)', textDecoration: 'none', fontSize: '0.85rem', padding: '0.5rem 0.75rem', borderRadius: 8, border: '1px solid transparent', transition: 'all 0.2s' }}
-              onMouseEnter={e => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.background = 'var(--surface)' }}
-              onMouseLeave={e => { e.currentTarget.style.color = 'var(--text3)'; e.currentTarget.style.borderColor = 'transparent'; e.currentTarget.style.background = 'transparent' }}>
+            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" style={{
+              display: 'flex', alignItems: 'center', gap: 6, color: 'var(--text3)', textDecoration: 'none',
+              transition: 'color .2s ease',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.color = 'var(--accent2)' }}
+              onMouseLeave={e => { e.currentTarget.style.color = 'var(--text3)' }}>
               {s.icon} {s.label}
             </a>
           ))}
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', color: 'var(--text3)', fontSize: '0.75rem' }}>
-        <div style={{ width: 1, height: 60, background: 'linear-gradient(to bottom, var(--accent), transparent)', animation: 'scrollLine 2s ease infinite' }} />
-        <span style={{ fontFamily: 'var(--font-jetbrains-mono)' }}>scroll</span>
+      {/* Right column — signature node graph */}
+      <div className="hero-graph" style={{ height: '78vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+        <svg viewBox="0 0 400 400" style={{ width: '100%', height: '100%', maxWidth: 520 }} xmlns="http://www.w3.org/2000/svg">
+          <path className="edge pulse d1" d="M80,90 L200,60" />
+          <path className="edge pulse d2" d="M200,60 L330,110" />
+          <path className="edge" d="M80,90 L150,200" />
+          <path className="edge pulse d3" d="M150,200 L330,110" />
+          <path className="edge" d="M150,200 L100,320" />
+          <path className="edge pulse d1" d="M150,200 L280,300" />
+          <path className="edge" d="M330,110 L280,300" />
+          <path className="edge" d="M100,320 L280,300" />
+          <path className="edge pulse d2" d="M200,60 L150,200" />
+
+          <circle className="node lit" cx="80" cy="90" r="4.5" />
+          <circle className="node" cx="200" cy="60" r="4.5" />
+          <circle className="node lit" cx="330" cy="110" r="4.5" />
+          <circle className="node" cx="150" cy="200" r="5.5" />
+          <circle className="node" cx="100" cy="320" r="4.5" />
+          <circle className="node lit" cx="280" cy="300" r="4.5" />
+        </svg>
+        <div style={{
+          position: 'absolute', bottom: '6vh', right: 0, fontFamily: 'var(--font-jetbrains-mono)',
+          fontSize: 11.5, color: 'var(--text3)', letterSpacing: '0.08em', textTransform: 'uppercase',
+        }}>
+        </div>
       </div>
+
+      <style jsx>{`
+        .edge { stroke: var(--border2); stroke-width: 1; fill: none; }
+        .edge.pulse { stroke: var(--accent2); stroke-width: 1; opacity: 0.55; animation: pulseEdge 4.5s ease-in-out infinite; }
+        .edge.pulse.d1 { animation-delay: 0.4s; }
+        .edge.pulse.d2 { animation-delay: 1.6s; }
+        .edge.pulse.d3 { animation-delay: 2.8s; }
+        .node { fill: var(--text3); }
+        .node.lit { fill: var(--accent); }
+        @keyframes pulseEdge { 0%, 100% { opacity: 0.12; } 50% { opacity: 0.7; } }
+        @media (max-width: 860px) {
+          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-graph { height: 38vh !important; order: -1; }
+        }
+      `}</style>
     </section>
   )
 }

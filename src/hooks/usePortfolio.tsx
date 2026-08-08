@@ -1,59 +1,7 @@
 // src/hooks/usePortfolio.ts
 'use client'
 
-import { useEffect, useState, useCallback, useRef, createContext, useContext } from 'react'
-
-// ─── Theme Context ──────────────────────────────────────────────────────────
-type ThemeContextType = {
-  isDark: boolean
-  toggle: () => void
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
-
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [isDark, setIsDark] = useState(true)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    const stored = localStorage.getItem('theme')
-    if (stored === 'light') {
-      setIsDark(false)
-      document.documentElement.classList.add('light')
-    }
-    setMounted(true)
-  }, [])
-
-  const toggle = useCallback(() => {
-    setIsDark(prev => {
-      const next = !prev
-      if (next) {
-        document.documentElement.classList.remove('light')
-        localStorage.setItem('theme', 'dark')
-      } else {
-        document.documentElement.classList.add('light')
-        localStorage.setItem('theme', 'light')
-      }
-      return next
-    })
-  }, [])
-
-  return (
-    <ThemeContext.Provider value={{ isDark, toggle }}>
-      <div style={{ visibility: mounted ? 'visible' : 'hidden' }}>
-        {children}
-      </div>
-    </ThemeContext.Provider>
-  )
-}
-
-export function useTheme() {
-  const context = useContext(ThemeContext)
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider')
-  }
-  return context
-}
+import { useEffect, useState, useRef } from 'react'
 
 // ─── Scroll Progress ────────────────────────────────────────────────────────
 export function useScrollProgress() {
