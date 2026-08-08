@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 }
 
