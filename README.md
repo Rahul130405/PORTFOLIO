@@ -85,34 +85,6 @@ Explore the portfolio online:
 
 ---
 
-## 📸 Gallery
-
-<div align="center">
-  <table style="width:100%; text-align:center;">
-    <tr>
-      <td width="50%">
-        <img src="public/screenshots/hero.png" width="100%" alt="Hero Section"/><br/>
-        <b>Hero Section</b>
-      </td>
-      <td width="50%">
-        <img src="public/screenshots/about.png" width="100%" alt="About Section"/><br/>
-        <b>About & Stats</b>
-      </td>
-    </tr>
-    <tr>
-      <td width="50%">
-        <img src="public/screenshots/projects.png" width="100%" alt="Projects Section"/><br/>
-        <b>Project Showcases</b>
-      </td>
-      <td width="50%">
-        <img src="public/screenshots/contact.png" width="100%" alt="Contact Section"/><br/>
-        <b>Contact & Footer</b>
-      </td>
-    </tr>
-  </table>
-</div>
-
----
 
 ## 🛠 Tech Stack
 
