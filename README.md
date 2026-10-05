@@ -51,38 +51,12 @@ The project is built on the **Next.js 14 App Router** with a strict **data-drive
 
 ---
 
-## 🌐 Live Demo & Interface Preview
+## 🌐 Live Demo 
 
 The application is deployed and maintained on **Vercel**:
 
 👉 **Live URL:** [https://rrj-portfolio.vercel.app/](https://rrj-portfolio.vercel.app/)
 
-<div align="center">
-  <table>
-    <tr>
-      <td width="50%">
-        <img src="public/screenshots/hero.png" width="100%" alt="Hero Section Preview" /><br />
-        <b>Hero Section & Animated Knowledge Graph</b>
-      </td>
-      <td width="50%">
-        <img src="public/screenshots/about.png" width="100%" alt="About Section Preview" /><br />
-        <b>About Overview & Config Card</b>
-      </td>
-    </tr>
-    <tr>
-      <td width="50%">
-        <img src="public/screenshots/projects.png" width="100%" alt="Projects Section Preview" /><br />
-        <b>Categorized Project Showcase</b>
-      </td>
-      <td width="50%">
-        <img src="public/screenshots/contact.png" width="100%" alt="Contact Section Preview" /><br />
-        <b>Serverless Contact System</b>
-      </td>
-    </tr>
-  </table>
-</div>
-
----
 
 ## ✨ Key Features
 
