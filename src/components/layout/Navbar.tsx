@@ -38,9 +38,26 @@ export default function Navbar() {
           transition: 'all 0.3s',
         }}
       >
-        <span style={{ fontFamily: 'var(--font-syne)', fontWeight: 800, fontSize: '1.2rem', background: 'linear-gradient(135deg,var(--accent),var(--accent2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', justifySelf: 'start' }}>
+        <Link
+          href="#hero"
+          style={{
+            fontFamily: 'var(--font-syne)',
+            fontWeight: 800,
+            fontSize: '1.2rem',
+            background: 'linear-gradient(135deg,var(--accent),var(--accent2))',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            justifySelf: 'start',
+            textDecoration: 'none',
+            cursor: 'pointer',
+            transition: 'opacity 0.2s ease',
+          }}
+          onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+          onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+        >
           {PERSONAL.shortName}
-        </span>
+        </Link>
 
         <ul style={{ display: 'flex', gap: '1.25rem', listStyle: 'none', margin: 0, padding: 0 }} className="nav-links-desktop">
           {NAV_LINKS.map(link => (
