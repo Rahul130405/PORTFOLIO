@@ -7,8 +7,11 @@ import Link from 'next/link'
 const NAV_LINKS = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#education', label: 'Education' },
   { href: '#projects', label: 'Projects' },
   { href: '#achievements', label: 'Achievements' },
+  { href: '#certifications', label: 'Certifications' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -39,12 +42,12 @@ export default function Navbar() {
           {PERSONAL.shortName}
         </span>
 
-        <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }} className="nav-links-desktop">
+        <ul style={{ display: 'flex', gap: '1.25rem', listStyle: 'none', margin: 0, padding: 0 }} className="nav-links-desktop">
           {NAV_LINKS.map(link => (
             <li key={link.href}>
               <a
                 href={link.href}
-                style={{ color: 'var(--text2)', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 400, letterSpacing: '0.02em', transition: 'color 0.2s' }}
+                style={{ color: 'var(--text2)', textDecoration: 'none', fontSize: '0.82rem', fontWeight: 400, letterSpacing: '0.02em', transition: 'color 0.2s' }}
                 onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'var(--text2)')}
               >

@@ -32,16 +32,16 @@ export default function HeroSection() {
           fontFamily: 'var(--font-jetbrains-mono)', fontSize: 14, color: 'var(--text2)',
           marginBottom: 28, animation: 'fadeUp 0.6s 0.3s ease both', opacity: 0,
         }}>
-          Machine Learning Developer <span style={{ color: 'var(--text3)' }}>·</span> Full Stack Developer <span style={{ color: 'var(--text3)' }}>·</span> StartIQOS AI
+          Machine Learning Developer <span style={{ color: 'var(--text3)' }}>·</span> Full Stack Developer <span style={{ color: 'var(--text3)' }}>·</span> Software Engineer — Core Team at StartIQOS AI
         </div>
 
         <p style={{
-          fontSize: 16.5, lineHeight: 1.7, color: 'var(--text2)', maxWidth: '34ch', marginBottom: 44,
+          fontSize: 16.5, lineHeight: 1.7, color: 'var(--text2)', maxWidth: '38ch', marginBottom: 44,
           animation: 'fadeUp 0.6s 0.35s ease both', opacity: 0,
         }}>
-          I build AI systems and full-stack products end to end — from Swin Transformer
-          diagnostics at 95.8% accuracy to production-grade backends. First-principles,
-          not frameworks-first.
+          I engineer AI-powered systems, computer vision models, and scalable full-stack
+          applications end to end. Focused on first-principles engineering and delivering
+          robust, production-ready software.
         </p>
 
         <div style={{

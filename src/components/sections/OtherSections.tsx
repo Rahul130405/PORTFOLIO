@@ -25,21 +25,21 @@ export function AboutSection() {
   return (
     <section id="about" style={{ padding: '8rem 0' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem' }}>
-        <SectionHeader tag="ABOUT ME" title={<>Building the <span className="gradient-text-2">Future</span></>} sub="Passionate developer blending AI, algorithms, and elegant code." />
+        <SectionHeader tag="ABOUT ME" title={<>Building the <span className="gradient-text-2">Future</span></>} sub="Computer Science undergraduate specializing in Machine Learning and Full Stack Development." />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
           <div className="reveal">
             <h2 style={{ fontFamily: 'var(--font-syne)', fontSize: '2.2rem', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
-              I craft intelligent systems that <span className="gradient-text-2">solve real problems.</span>
+              I craft intelligent systems and <span className="gradient-text-2">production-ready software.</span>
             </h2>
             {PERSONAL.bio.map((p, i) => (
               <p key={i} style={{ color: 'var(--text2)', lineHeight: 1.8, marginBottom: '1rem' }}>{p}</p>
             ))}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '2rem' }}>
               {[
-                { icon: '🤖', title: 'AI & ML', sub: 'LLMs, NLP, intelligent systems' },
-                { icon: '⚡', title: 'DSA', sub: 'Algorithms & data structures' },
-                { icon: '🌐', title: 'Full Stack', sub: 'REST APIs, MongoDB, backends' },
-                { icon: '🎯', title: 'Problem Solver', sub: 'Hackathons & competitive coding' },
+                { icon: '🤖', title: 'AI & ML', sub: 'Deep Learning, CV & RAG systems' },
+                { icon: '⚡', title: 'Full Stack', sub: 'React, Next.js & modern web' },
+                { icon: '⚙️', title: 'Backend', sub: 'Node.js, FastAPI & REST APIs' },
+                { icon: '🎯', title: 'Problem Solving', sub: 'DSA & first-principles mindset' },
               ].map(card => (
                 <div key={card.title} className="reveal glass"
                   style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.25rem', transition: 'all 0.3s', cursor: 'default' }}
@@ -60,10 +60,10 @@ export function AboutSection() {
               <div style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '0.85rem', lineHeight: 2 }}>
                 <span style={{ color: '#6c63ff' }}>const</span> <span style={{ color: '#00d4aa' }}>developer</span> <span style={{ color: 'var(--text2)' }}>= {'{'}</span><br />
                 &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>name</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;Rahul Raj Jaiswal&apos;</span><span style={{ color: 'var(--text2)' }}>,</span><br />
-                &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>role</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;ML Developer&apos;</span><span style={{ color: 'var(--text2)' }}>,</span><br />
-                &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>passion</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;AI + DSA&apos;</span><span style={{ color: 'var(--text2)' }}>,</span><br />
+                &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>role</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;Software Engineer — Core Team&apos;</span><span style={{ color: 'var(--text2)' }}>,</span><br />
+                &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>focus</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;ML + Full Stack Development&apos;</span><span style={{ color: 'var(--text2)' }}>,</span><br />
                 &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>available</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#00d4aa' }}>true</span><span style={{ color: 'var(--text2)' }}>,</span><br />
-                &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>location</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;India 🇮🇳&apos;</span><br />
+                &nbsp;&nbsp;<span style={{ color: '#38bdf8' }}>location</span><span style={{ color: 'var(--text2)' }}>:</span> <span style={{ color: '#ffc400' }}>&apos;Chandigarh, India 🇮🇳&apos;</span><br />
                 <span style={{ color: 'var(--text2)' }}>{'}'}</span>
               </div>
               <div style={{ display: 'flex', gap: '2rem', marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
@@ -151,14 +151,69 @@ export function CertificationsSection() {
   return (
     <section id="certifications" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, transparent, var(--bg2), transparent)' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem' }}>
-        <SectionHeader tag="CERTIFICATIONS" title={<>Professional <span className="gradient-text-2">Certifications</span></>} />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-          {CERTIFICATIONS.map((cert, i) => (
-            <div key={i} className="reveal glass" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '1.5rem' }}>
-              <h3 style={{ fontFamily: 'var(--font-syne)', fontWeight: 700, fontSize: '1rem', marginBottom: '0.25rem' }}>{cert.name}</h3>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text3)' }}>{cert.issuer}</div>
-            </div>
-          ))}
+        <SectionHeader tag="CREDENTIALS" title={<>Professional <span className="gradient-text-2">Certifications</span></>} sub="Verified certificates, technical specializations, and research presentations." />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+          {CERTIFICATIONS.map((cert, i) => {
+            const cardInner = (
+              <div
+                className="reveal glass"
+                style={{
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 16,
+                  padding: '1.5rem',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s ease',
+                  cursor: cert.link ? 'pointer' : 'default',
+                }}
+                onMouseEnter={e => {
+                  if (cert.link) {
+                    e.currentTarget.style.borderColor = 'var(--accent)'
+                    e.currentTarget.style.transform = 'translateY(-4px)'
+                  }
+                }}
+                onMouseLeave={e => {
+                  if (cert.link) {
+                    e.currentTarget.style.borderColor = 'var(--border)'
+                    e.currentTarget.style.transform = 'translateY(0)'
+                  }
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', gap: '0.5rem' }}>
+                    <span style={{ fontSize: '0.78rem', color: 'var(--accent)', fontFamily: 'var(--font-jetbrains-mono)', fontWeight: 500 }}>
+                      {cert.issuer}
+                    </span>
+                    {cert.period && (
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text3)', fontFamily: 'var(--font-jetbrains-mono)' }}>
+                        {cert.period}
+                      </span>
+                    )}
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-syne)', fontWeight: 700, fontSize: '1.02rem', lineHeight: 1.4, color: 'var(--text)', marginBottom: '0.5rem' }}>
+                    {cert.name}
+                  </h3>
+                </div>
+                {cert.link && (
+                  <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--accent2)', fontSize: '0.8rem', fontFamily: 'var(--font-jetbrains-mono)' }}>
+                    <span>View Certificate</span>
+                    <span>↗</span>
+                  </div>
+                )}
+              </div>
+            )
+
+            return cert.link ? (
+              <a key={i} href={cert.link} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                {cardInner}
+              </a>
+            ) : (
+              <div key={i} style={{ height: '100%' }}>{cardInner}</div>
+            )
+          })}
         </div>
       </div>
     </section>

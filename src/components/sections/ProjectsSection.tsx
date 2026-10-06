@@ -49,6 +49,9 @@ export default function ProjectsSection() {
                 {p.github && (
                   <a href={p.github} target="_blank" rel="noreferrer" style={{ color: 'var(--text3)' }}><Github size={18} /></a>
                 )}
+                {p.paper && (
+                  <a href={p.paper} target="_blank" rel="noreferrer" style={{ color: 'var(--accent2)', fontSize: 13, fontFamily: 'var(--font-jetbrains-mono)' }}>Research Paper →</a>
+                )}
                 {p.demo && (
                   <a href={p.demo} target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', fontSize: 13, fontFamily: 'var(--font-jetbrains-mono)' }}>View live →</a>
                 )}

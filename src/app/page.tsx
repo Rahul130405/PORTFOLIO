@@ -12,6 +12,7 @@ import {
   EducationSection,
   AchievementsSection,
   ExperienceSection,
+  CertificationsSection,
   ContactSection,
 } from '@/components/sections/OtherSections'
 
@@ -42,6 +43,7 @@ export default function Home() {
         <EducationSection />
         <ProjectsSection />
         <AchievementsSection />
+        <CertificationsSection />
         <ContactSection />
       </main>
 
