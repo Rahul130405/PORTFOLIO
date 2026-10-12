@@ -3,6 +3,7 @@
 import { useScrollProgress } from '@/hooks/usePortfolio'
 import { PERSONAL } from '@/data/portfolio'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const NAV_LINKS = [
   { href: '#about', label: 'About' },
@@ -12,11 +13,13 @@ const NAV_LINKS = [
   { href: '#projects', label: 'Projects' },
   { href: '#achievements', label: 'Achievements' },
   { href: '#certifications', label: 'Certifications' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
   const progress = useScrollProgress()
+  const pathname = usePathname()
+  const isHome = pathname === '/'
 
   return (
     <>
@@ -39,7 +42,7 @@ export default function Navbar() {
         }}
       >
         <Link
-          href="#hero"
+          href={isHome ? '#hero' : '/'}
           style={{
             fontFamily: 'var(--font-syne)',
             fontWeight: 800,
@@ -60,21 +63,54 @@ export default function Navbar() {
         </Link>
 
         <ul style={{ display: 'flex', gap: '1.25rem', listStyle: 'none', margin: 0, padding: 0 }} className="nav-links-desktop">
-          {NAV_LINKS.map(link => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                style={{ color: 'var(--text2)', textDecoration: 'none', fontSize: '0.82rem', fontWeight: 400, letterSpacing: '0.02em', transition: 'color 0.2s' }}
-                onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
-                onMouseLeave={e => (e.currentTarget.style.color = 'var(--text2)')}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {NAV_LINKS.map(link => {
+            const isContact = link.href === '/contact'
+            const targetHref = isContact ? '/contact' : (isHome ? link.href : `/${link.href}`)
+            const isActive = isContact && pathname === '/contact'
+
+            return (
+              <li key={link.label}>
+                <Link
+                  href={targetHref}
+                  style={{
+                    color: isActive ? 'var(--accent)' : 'var(--text2)',
+                    textDecoration: 'none',
+                    fontSize: '0.82rem',
+                    fontWeight: isActive ? 600 : 400,
+                    letterSpacing: '0.02em',
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = isActive ? 'var(--accent)' : 'var(--text2)')}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
         <div /> {/* Spacer for symmetry */}
       </nav>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          nav {
+            padding: 0.75rem 1rem !important;
+            display: flex !important;
+            justify-content: space-between !important;
+          }
+          .nav-links-desktop {
+            gap: 0.85rem !important;
+            overflow-x: auto !important;
+            max-width: 72vw !important;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+          }
+          .nav-links-desktop::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      `}</style>
     </>
   )
 }

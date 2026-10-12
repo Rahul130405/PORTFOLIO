@@ -2,8 +2,6 @@
 
 import { PERSONAL, SKILLS, STATS, ACHIEVEMENTS, EXPERIENCE, EDUCATION, CERTIFICATIONS } from '@/data/portfolio'
 import { useState } from 'react'
-import { Github, Linkedin, Mail } from 'lucide-react'
-import { sendEmail } from '@/app/actions'
 
 // ─── Section Header ─────────────────────────────────────────────────────────
 export function SectionHeader({ tag, title, sub }: { tag: string; title: React.ReactNode; sub?: string }) {
@@ -282,87 +280,4 @@ export function ExperienceSection() {
 }
 
 // ─── Contact ─────────────────────────────────────────────────────────────────
-export function ContactSection() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-
-  async function handleAction(formData: FormData) {
-    setStatus('sending')
-    const result = await sendEmail(formData)
-    if (result.success) {
-      setStatus('success')
-      setTimeout(() => setStatus('idle'), 5000)
-    } else {
-      console.error('Submission error:', result.error)
-      setStatus('error')
-      setTimeout(() => setStatus('idle'), 5000)
-    }
-  }
-
-  return (
-    <section id="contact" style={{ padding: '8rem 0 6rem' }}>
-      <div style={{ maxWidth: 700, margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-        <div className="reveal">
-          <span style={{ display: 'inline-block', fontFamily: 'var(--font-jetbrains-mono)', fontSize: '0.75rem', color: 'var(--accent)', background: 'rgba(108,99,255,0.1)', border: '1px solid rgba(108,99,255,0.2)', borderRadius: 100, padding: '0.25rem 1rem', marginBottom: '1rem', letterSpacing: '0.1em' }}>
-            GET IN TOUCH
-          </span>
-          <h2 style={{ fontFamily: 'var(--font-syne)', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Let&apos;s build something <span className="gradient-text-2">together.</span>
-          </h2>
-          <p style={{ color: 'var(--text2)', marginBottom: '3rem', fontSize: '1rem' }}>
-            Have a project in mind or just want to chat? I&apos;m always open to new opportunities and interesting conversations.
-          </p>
-        </div>
-
-        <form action={handleAction} className="reveal" style={{ display: 'grid', gap: '1rem', textAlign: 'left', marginBottom: '2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-              <label style={{ fontSize: '0.8rem', color: 'var(--text3)', fontFamily: 'var(--font-jetbrains-mono)' }}>name</label>
-              <input required name="name" type="text" placeholder="Your name" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, padding: '0.75rem 1rem', color: 'var(--text)', fontFamily: 'var(--font-dm-sans)', fontSize: '0.9rem', outline: 'none', transition: 'border-color 0.2s' }}
-                onFocus={e => e.target.style.borderColor = 'var(--accent)'}
-                onBlur={e => e.target.style.borderColor = 'var(--border)'} />
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-              <label style={{ fontSize: '0.8rem', color: 'var(--text3)', fontFamily: 'var(--font-jetbrains-mono)' }}>email</label>
-              <input required name="email" type="email" placeholder="your@email.com" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, padding: '0.75rem 1rem', color: 'var(--text)', fontFamily: 'var(--font-dm-sans)', fontSize: '0.9rem', outline: 'none', transition: 'border-color 0.2s' }}
-                onFocus={e => e.target.style.borderColor = 'var(--accent)'}
-                onBlur={e => e.target.style.borderColor = 'var(--border)'} />
-            </div>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-            <label style={{ fontSize: '0.8rem', color: 'var(--text3)', fontFamily: 'var(--font-jetbrains-mono)' }}>message</label>
-            <textarea required name="message" rows={5} placeholder="Tell me about your project..." style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, padding: '0.75rem 1rem', color: 'var(--text)', fontFamily: 'var(--font-dm-sans)', fontSize: '0.9rem', outline: 'none', transition: 'border-color 0.2s', resize: 'none' }}
-              onFocus={e => e.target.style.borderColor = 'var(--accent)'}
-              onBlur={e => e.target.style.borderColor = 'var(--border)'} />
-          </div>
-          <button type="submit" disabled={status === 'sending'}
-            style={{ 
-              background: status === 'success' ? 'linear-gradient(135deg,#00d4aa,#00b89c)' : 
-                         status === 'error' ? 'linear-gradient(135deg,#ff6b6b,#ee5253)' :
-                         'linear-gradient(135deg,var(--accent),#8b84ff)', 
-              color: '#fff', padding: '0.75rem 2rem', borderRadius: 10, border: 'none', cursor: status === 'sending' ? 'not-allowed' : 'pointer', fontWeight: 500, fontSize: '0.9rem', fontFamily: 'var(--font-dm-sans)', transition: 'all 0.3s', boxShadow: '0 0 30px var(--glow)', opacity: status === 'sending' ? 0.7 : 1 
-            }}>
-            {status === 'sending' ? 'Sending...' : 
-             status === 'success' ? 'Message Sent! ✓' : 
-             status === 'error' ? 'Error Sending! ✗' : 
-             'Send Message →'}
-          </button>
-        </form>
-
-        <div className="reveal" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          {[
-            { href: `mailto:${PERSONAL.email}`, icon: <Mail size={16} />, label: 'Email' },
-            { href: PERSONAL.github, icon: <Github size={16} />, label: 'GitHub' },
-            { href: PERSONAL.linkedin, icon: <Linkedin size={16} />, label: 'LinkedIn' },
-          ].map(s => (
-            <a key={s.label} href={s.href} target="_blank" rel="noreferrer"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.2rem', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, color: 'var(--text2)', textDecoration: 'none', fontSize: '0.85rem', transition: 'all 0.2s' }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.background = 'rgba(108,99,255,0.05)' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text2)'; e.currentTarget.style.background = 'var(--surface)' }}>
-              {s.icon} {s.label}
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
+export { default as ContactSection, default as ContactView } from './ContactView'

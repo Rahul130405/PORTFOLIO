@@ -13,7 +13,6 @@ import {
   AchievementsSection,
   ExperienceSection,
   CertificationsSection,
-  ContactSection,
 } from '@/components/sections/OtherSections'
 
 export default function Home() {
@@ -44,7 +43,6 @@ export default function Home() {
         <ProjectsSection />
         <AchievementsSection />
         <CertificationsSection />
-        <ContactSection />
       </main>
 
       <footer style={{

@@ -2,6 +2,7 @@
 
 import { PERSONAL } from '@/data/portfolio'
 import { Github, Linkedin, Mail, Code } from 'lucide-react'
+import Link from 'next/link'
 
 export default function HeroSection() {
   return (
@@ -57,14 +58,14 @@ export default function HeroSection() {
             onMouseLeave={e => { e.currentTarget.style.background = 'var(--text)'; e.currentTarget.style.transform = 'translateY(0)' }}>
             View projects
           </a>
-          <a href="#contact" style={{
+          <Link href="/contact" style={{
             fontFamily: 'var(--font-dm-sans)', fontSize: 14.5, color: 'var(--text2)', textDecoration: 'none',
             borderBottom: '1px solid var(--border2)', paddingBottom: 2, transition: 'color .2s ease, border-color .2s ease',
           }}
             onMouseEnter={e => { e.currentTarget.style.color = 'var(--text)'; e.currentTarget.style.borderColor = 'var(--text2)' }}
             onMouseLeave={e => { e.currentTarget.style.color = 'var(--text2)'; e.currentTarget.style.borderColor = 'var(--border2)' }}>
             Get in touch
-          </a>
+          </Link>
         </div>
 
         <div style={{
